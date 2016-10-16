@@ -18,7 +18,7 @@ import javax.xml.stream.XMLStreamException;
 
 public class Server {
 	public static String SERVER_STRING = "Server: jdbhttpd/0.1.0\r\n";
-	public static final int SERVERPORT=3324;
+	public static final int SERVERPORT=3333;
 	static Socket socket = null;
 
 
