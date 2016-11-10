@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+ 
+   
+    <bean id="boss" class="test1.boss">
+    	<property name="car" ref="car"/>
+    	<property name="office" ref="office"/>
+    </bean>
+    
+    <bean id="office" class="test1.office">
+    	<property name="officeId" value="001"/>
+    	<property name="boss" ref="boss"/>
+    </bean>
+</beans>
