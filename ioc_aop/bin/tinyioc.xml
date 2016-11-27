@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+    <bean id="outputService" class="test.ioc.OutputServiceImpl">
+    </bean>
+
+    <bean id="helloWorldService" class="test.ioc.HelloWorldServiceImpl">
+        <property name="text" value="Hello World!"></property>
+        <property name="outputService" ref="outputService"></property>
+    </bean>
+
+	<!-- 这个东西是干嘛的？ -->
+    <bean id="autoProxyCreator" class="main.ioc.aop.AspectJAwareAdvisorAutoProxyCreator"></bean>
+
+    <bean id="timeInterceptor" class="test.ioc.aop.TimerInterceptor"></bean>
+
+    <bean id="aspectjAspect" class="main.ioc.aop.AspectJExpressionPointcutAdvisor">
+        <property name="advice" ref="timeInterceptor"></property>
+        <property name="expression" value="execution(* main.ioc.*.*(..))"></property>
+    </bean>
+
+</beans>
